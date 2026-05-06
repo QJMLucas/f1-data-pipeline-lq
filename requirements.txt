@@ -1,0 +1,17 @@
+requests==2.31.0
+pandas==2.0.0
+numpy==1.26.0
+pyarrow==14.0.0
+
+# for running sql queries
+duckdb==1.2.2
+
+# orchestration
+dagster==1.13.3
+dagster-webserver==1.13.3
+
+# linting
+ruff==0.4.0
+
+# testing
+pytest==7.4.0
