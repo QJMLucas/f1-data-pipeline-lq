@@ -112,4 +112,6 @@ Check pipeline health locally:
 3. Modify `laps.py` to call `get_laps()` instead of `get_laps(mode='backfill')`
 4. This simulates a second run where yesterday's data exists and incremental load starts from yesterday's max date
 
-test
+## AI Disclosure
+
+This project was developed with assistance from Claude.
