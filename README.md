@@ -104,7 +104,8 @@ Check pipeline health locally:
 
 **Current behavior:**
 - The pipeline includes retry logic with exponential backoff for transient failures
-- Laps module uses incremental load by default (fetches from yesterday's max date)
+- Laps module uses backfill mode by default (fetches from 2023 onwards)
+- The API returns consistent data on reruns regardless of backfill or incremental mode, so failed runs can be safely retried
 
 **To test backfill mode:**
 1. Run backfill: `python -m src.ingestion.laps --mode backfill` (fetches from 2023 onwards)
