@@ -56,6 +56,11 @@ python -c "import duckdb; duckdb.sql(open('tests/manual_tests/read_laps.sql').re
 dagster dev
 ```
 
+**Note on Dagster execution:**
+- Dagster's `laps_asset` runs with `lap_number=8` parameter, which fetches only incremental data (1 file)
+- Running `python -m src.ingestion.laps` locally defaults to `mode="backfill"`, which loads all data from 2023 onwards (multiple files)
+- To get full historical backfill in Dagster, modify the asset call to: `get_laps(mode="backfill", lap_number=8)`
+
 ## Linting and Formatting
 
 ### Check code with ruff
