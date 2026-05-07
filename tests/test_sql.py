@@ -47,6 +47,6 @@ def test_sql(sql_file):
         # Check if result contains PASS or FAIL
         result_val = str(result.iloc[0, 0])
         if 'PASS' in result_val:
-            print(f"  ✓ PASS")
+            print("  ✓ PASS")
         else:
             assert False, f"Query {i} failed: {result_val}"

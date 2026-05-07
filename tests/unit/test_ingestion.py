@@ -1,4 +1,3 @@
-import os
 import pandas as pd
 from src.ingestion.laps import get_laps
 
@@ -11,16 +10,16 @@ class TestGetLaps:
 
         print("\n→ Calling get_laps(date_start='2023-09-01', date_end='2023-09-02', driver_number=55)...")
         result = get_laps(date_start='2023-09-01', date_end='2023-09-02', driver_number=55)
-        print(f"✓ Function returned successfully")
+        print("✓ Function returned successfully")
 
         # Read result as dataframe
-        print(f"\n→ Converting result to dataframe...")
+        print("\n→ Converting result to dataframe...")
         df = pd.DataFrame(result)
-        print(f"✓ Successfully converted result to dataframe")
+        print("✓ Successfully converted result to dataframe")
 
-        print(f"\n--- Data ---")
+        print("\n--- Data ---")
         print(f"Number of rows: {len(df)}")
         print(f"Columns: {df.columns.tolist()}")
         print(f"\nData:\n{df}")
 
-        print(f"\n✓ TEST PASSED!\n")
+        print("\n✓ TEST PASSED!\n")

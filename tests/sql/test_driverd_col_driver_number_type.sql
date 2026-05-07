@@ -4,4 +4,4 @@ SELECT CASE
       THEN 'PASS'
       ELSE 'FAIL: driver_number is ' || typeof(driver_number)
 END as test_result
-FROM read_parquet('data/raw/drivers.parquet') LIMIT 1;
+FROM read_parquet('data/raw/*/drivers*') LIMIT 1;

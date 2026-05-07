@@ -1,7 +1,5 @@
-import pytest
 import os
 import pandas as pd
-from pathlib import Path
 from src.storage.parquet_writer import write_to_parquet
 
 
@@ -23,40 +21,40 @@ class TestWriteToParquet:
         print(f"✓ Function returned filepath: {filepath}")
 
         # Verify file exists
-        print(f"\n→ Verifying file exists...")
+        print("\n→ Verifying file exists...")
         assert os.path.exists(filepath), f"File {filepath} was not created"
         print(f"✓ File exists at {filepath}")
 
 
         # Verify it's valid parquet and readable
-        print(f"\n→ Reading parquet file...")
+        print("\n→ Reading parquet file...")
         df = pd.read_parquet(filepath)
-        print(f"✓ Successfully read parquet file")
+        print("✓ Successfully read parquet file")
 
         # Verify data
-        print(f"\n--- Data Verification ---")
+        print("\n--- Data Verification ---")
         print(f"Number of rows: {len(df)}")
         print(f"Columns: {df.columns.tolist()}")
         print(f"Data:\n{df}")
 
         assert len(df) == 2, f"Expected 2 rows, got {len(df)}"
-        print(f"✓ Correct number of rows (2)")
+        print("✓ Correct number of rows (2)")
 
         assert 'driver_number' in df.columns, "Column 'driver_number' not found"
-        print(f"✓ Column 'driver_number' exists")
+        print("✓ Column 'driver_number' exists")
 
         assert 'name' in df.columns, "Column 'name' not found"
-        print(f"✓ Column 'name' exists")
+        print("✓ Column 'name' exists")
 
         assert df.iloc[0]['driver_number'] == 1, "First row driver_number incorrect"
-        print(f"✓ First row data correct: driver_number=1")
+        print("✓ First row data correct: driver_number=1")
 
         assert df.iloc[1]['driver_number'] == 2, "Second row driver_number incorrect"
-        print(f"✓ Second row data correct: driver_number=2")
+        print("✓ Second row data correct: driver_number=2")
 
         # Cleanup
-        print(f"\n→ Cleaning up test file...")
+        print("\n→ Cleaning up test file...")
         os.remove(filepath)
-        print(f"✓ Test file removed")
+        print("✓ Test file removed")
 
-        print(f"\n✓ TEST PASSED!\n")
+        print("\n✓ TEST PASSED!\n")

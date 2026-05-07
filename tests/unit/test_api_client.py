@@ -12,20 +12,20 @@ class TestF1APIClient:
 
         print("\n→ Calling client.get('drivers', params={'driver_number': 55, 'session_key': 9159})...")
         data = client.get('drivers', params={'driver_number': 55, 'session_key': 9159})
-        print(f"✓ Got response from API")
+        print("✓ Got response from API")
 
         client.close()
-        print(f"✓ Closed session")
+        print("✓ Closed session")
 
         # Verify response is valid
-        print(f"\n--- Verification ---")
+        print("\n--- Verification ---")
         assert isinstance(data, list), "Response should be a list"
-        print(f"✓ Response is a list")
+        print("✓ Response is a list")
 
         assert len(data) > 0, "Response should contain at least one driver"
         print(f"✓ Got {len(data)} drivers")
 
         assert 'driver_number' in data[0], "Missing 'driver_number' field"
-        print(f"✓ First driver has 'driver_number' field")
+        print("✓ First driver has 'driver_number' field")
 
-        print(f"\n✓ TEST PASSED!\n")
+        print("\n✓ TEST PASSED!\n")
