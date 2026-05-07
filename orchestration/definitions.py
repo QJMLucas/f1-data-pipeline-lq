@@ -1,6 +1,13 @@
 import logging
 from datetime import datetime, timezone
-from dagster import asset, ScheduleDefinition, Definitions, MaterializeResult, MetadataValue, define_asset_job
+from dagster import (
+    asset,
+    ScheduleDefinition,
+    Definitions,
+    MaterializeResult,
+    MetadataValue,
+    define_asset_job,
+)
 
 from src.ingestion.drivers import get_drivers
 from src.ingestion.laps import get_laps
@@ -21,7 +28,7 @@ def drivers_asset():
         metadata={
             "timestamp": MetadataValue.text(timestamp),
             "record_count": MetadataValue.int(len(result)),
-        }
+        },
     )
 
 
@@ -41,7 +48,7 @@ def laps_asset(drivers_asset):
         metadata={
             "timestamp": MetadataValue.text(timestamp),
             "record_count": MetadataValue.int(len(result)),
-        }
+        },
     )
 
 

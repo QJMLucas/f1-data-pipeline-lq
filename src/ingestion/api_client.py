@@ -3,7 +3,7 @@ from typing import Any, Dict
 
 from ..retry import exponential_backoff_retry
 
-BASE_URL = 'https://api.openf1.org/v1'
+BASE_URL = "https://api.openf1.org/v1"
 
 
 class F1APIClient:

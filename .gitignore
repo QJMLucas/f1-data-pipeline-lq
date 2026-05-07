@@ -39,7 +39,8 @@ wheels/
 .coverage
 htmlcov/
 
-data/raw/*.parquet
+data/raw/*
+!data/raw/.gitkeep
 data/processed/
 
 # Environment variables

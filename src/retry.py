@@ -4,7 +4,7 @@ from typing import Callable, TypeVar
 
 logger = logging.getLogger(__name__)
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 def exponential_backoff_retry(
@@ -34,10 +34,12 @@ def exponential_backoff_retry(
             return func()
         except Exception as e:
             if attempt == max_retries:
-                logger.error(f"All {max_retries + 1} attempts failed. Last error: {str(e)}")
+                logger.error(
+                    f"All {max_retries + 1} attempts failed. Last error: {str(e)}"
+                )
                 raise
 
-            delay = min(base_delay * (backoff_factor ** attempt), max_delay)
+            delay = min(base_delay * (backoff_factor**attempt), max_delay)
             logger.warning(
                 f"Attempt {attempt + 1} failed: {str(e)}. "
                 f"Retrying in {delay:.1f}s..."

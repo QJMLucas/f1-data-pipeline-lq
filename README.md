@@ -106,3 +106,5 @@ Check pipeline health locally:
 2. Rename the output folder to yesterday's date (e.g., if today is 2026-05-08, rename to `20260507`)
 3. Modify `laps.py` to call `get_laps()` instead of `get_laps(mode='backfill')`
 4. This simulates a second run where yesterday's data exists and incremental load starts from yesterday's max date
+
+test
