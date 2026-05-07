@@ -54,8 +54,8 @@ class TestWriteToParquet:
         print("✓ Second row data correct: driver_number=2")
 
         # Cleanup
-        print("\n→ Cleaning up test file...")
-        os.remove(filepath)
-        print("✓ Test file removed")
+        # print("\n→ Cleaning up test file...")
+        # os.remove(filepath)
+        # print("✓ Test file removed")
 
         print("\n✓ TEST PASSED!\n")
