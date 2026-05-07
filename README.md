@@ -81,6 +81,18 @@ ruff check . --fix
 ```bash
 pytest tests/test_sql.py -v
 ```
+If you see `ModuleNotFoundError: No module named 'duckdb'` when running tests, your virtual environment may be mixed with Conda's base environment:                  
+                                                                                                                                                                     
+```bash                                                                                                                                                              
+conda deactivate
+source venv/bin/activate                                                                                                                                             
+pip install -r requirements.txt                                                                                                                                      
+                                                                                                                                                                     
+Then retry:                                                                                                                                                          
+pytest tests/test_sql.py -v                                                                                                                                          
+                                                                                                                                                                     
+This ensures only your venv is active and pip installs to the correct location.     
+
 
 ### Run unit tests
 ```bash
