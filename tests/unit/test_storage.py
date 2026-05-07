@@ -12,7 +12,7 @@ class TestWriteToParquet:
             {"driver_number": 1, "name": "Max"},
             {"driver_number": 2, "name": "Charles"},
         ]
-        filename = "test_driver_write.parquet"
+        filename = "drivers_stroage_test.parquet"
 
         print(f"✓ Test data prepared: {data}")
 
