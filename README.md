@@ -27,12 +27,12 @@ pip install -r requirements.txt
 
 ## Running the Pipeline
 
-### Run drivers module
+### Run drivers module - then driver file will appear under data/raw/yyyymmdd/
 ```bash
 python -m src.ingestion.drivers
 ```
 
-### Run laps module
+### Run laps module - - then lap files will appear under data/raw/yyyymmdd/
 ```bash
 python -m src.ingestion.laps
 ```
@@ -41,7 +41,7 @@ Note: Laps is set to incremental load by default, fetching data from 2023 onward
 ### Read from parquet file
 Change the SQL file path to check different data:
 
-**Read drivers**
+**Read drivers**  
 ```bash
 python -c "import duckdb; duckdb.sql(open('tests/manual_tests/read_drivers.sql').read()).show()"
 ```

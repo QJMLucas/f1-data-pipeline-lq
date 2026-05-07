@@ -149,5 +149,5 @@ def get_laps(
 
 
 if __name__ == "__main__":
-    # get_laps(mode='backfill')
-    get_laps()
+    get_laps(mode='backfill')
+    # get_laps()
