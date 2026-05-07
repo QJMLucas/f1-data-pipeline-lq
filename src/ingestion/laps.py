@@ -138,7 +138,7 @@ def get_laps(
             )
 
         print("date_start >= " + str(date_start), "end_time < " + str(date_end))
-        _fetch_laps_single_period(
+        return _fetch_laps_single_period(
             date_start,
             date_end,
             is_final=True,
